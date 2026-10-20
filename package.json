@@ -1,0 +1,30 @@
+{
+  "name": "dsh-persona-hub",
+  "version": "1.0.0",
+  "description": "A multi-persona DSH bundle: install all personas at once, or pick a subset with build.mjs.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "cordis.patch.yml",
+    "personas/*.md",
+    "lib/toolset.yml",
+    "build.mjs",
+    "README.md",
+    "AGENT-INSTALL.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "list": "node build.mjs --list",
+    "build": "node build.mjs --all --out dist/persona-pack",
+    "sync": "node build.mjs --sync"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

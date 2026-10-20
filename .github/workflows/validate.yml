@@ -1,0 +1,24 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: List personas
+        run: node build.mjs --list
+      - name: Build every persona
+        run: node build.mjs --all --out dist/ci
+      - name: Check generated bundle
+        run: |
+          test -f dist/ci/cordis.patch.yml
+          test -f dist/ci/package.json
+          node -e "const p=require('./dist/ci/package.json'); if(p.dsh?.bundle?.patch!=='./cordis.patch.yml') process.exit(1);"
+          grep -c "id: preset-persona-" dist/ci/cordis.patch.yml

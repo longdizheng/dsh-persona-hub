@@ -17,7 +17,8 @@ Agent 会先运行 `node build.mjs --list`，再用 `ask_user_question` 让你�
 ### B. 自己勾选
 
 ```bash
-git clone <本仓库> && cd dsh-persona-hub
+git clone https://github.com/longdizheng/dsh-persona-hub.git
+cd dsh-persona-hub
 node build.mjs            # 编号多选，all=全部，回车=取消
 # 或非交互
 node build.mjs --only alpha,selena
@@ -32,7 +33,7 @@ agent 执行 `plugin_manager action=install_bundle target=<该目录绝对路径
 直接填仓库的 git 地址即可：
 
 ```
-git+https://github.com/<你>/<仓库>.git
+git+https://github.com/longdizheng/dsh-persona-hub.git
 ```
 
 装完不会问你，四个 preset 全在，按会话选一个。

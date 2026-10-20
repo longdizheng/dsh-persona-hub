@@ -2,6 +2,7 @@ name: validate
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 jobs:
@@ -16,6 +17,10 @@ jobs:
         run: node build.mjs --list
       - name: Build every persona
         run: node build.mjs --all --out dist/ci
+      - name: Check generated patch is in sync
+        run: |
+          node build.mjs --sync
+          git diff --exit-code -- cordis.patch.yml
       - name: Check generated bundle
         run: |
           test -f dist/ci/cordis.patch.yml

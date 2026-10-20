@@ -11,6 +11,7 @@
     "lib/toolset.yml",
     "build.mjs",
     "README.md",
+    "CONTRIBUTING.md",
     "AGENT-INSTALL.md",
     "LICENSE"
   ],

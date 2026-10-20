@@ -86,6 +86,11 @@ preset 没有继承机制，所以工具行要随包带上，`toolset.yml` 就�
 2. 正文就是人设 system prompt，直接写「你是……」。
 3. 运行 `node build.mjs --sync` 更新仓库根 patch；再 `node build.mjs --list` 确认。
 
+### 让别人也能加
+
+Fork 后按上面三步改，提 PR —— `main` 不接受直接推送，CI 会校验人设格式和
+`cordis.patch.yml` 是否同步。详细规则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 兼容性与升级
 
 - 生成物声明 `engines.dsh = ">=0.2.1-rc.2"`；DSH 大版本变化后，先对照
@@ -95,5 +100,5 @@ preset 没有继承机制，所以工具行要随包带上，`toolset.yml` 就�
 
 ## 版权
 
-人设文本来自本仓库作者的二次创作，角色与世界观版权归《战双帕弥什》及其权利方，
-仅供个人同人使用。代码与模板以 MIT 发布。
+人设文本以 CC BY-NC-SA 4.0 共享，来自本仓库作者与贡献者的二次创作；角色与世界观
+版权归《战双帕弥什》及其权利方，仅供非商业同人使用。代码与模板以 MIT 发布。
